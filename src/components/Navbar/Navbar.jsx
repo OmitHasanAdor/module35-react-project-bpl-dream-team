@@ -1,10 +1,10 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import Dollar from "../../assets/dollar 1.png";
 
 const Navbar = ({ coin }) => {
   return (
-    <motion.div
+    <Motion.div
       initial={{ y: -30, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
@@ -14,7 +14,7 @@ const Navbar = ({ coin }) => {
       <div className="navbar-start">
         {/* Mobile Menu */}
         <div className="dropdown">
-          <motion.div
+          <Motion.div
             whileTap={{ scale: 0.9 }}
             tabIndex={0}
             role="button"
@@ -34,7 +34,7 @@ const Navbar = ({ coin }) => {
                 d="M4 6h16M4 12h8m-8 6h16"
               />
             </svg>
-          </motion.div>
+          </Motion.div>
 
           <ul
             tabIndex="-1"
@@ -75,7 +75,7 @@ const Navbar = ({ coin }) => {
         </div>
 
         {/* Logo */}
-        <motion.a
+        <Motion.a
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="btn btn-ghost text-xl font-extrabold tracking-tight"
@@ -83,20 +83,20 @@ const Navbar = ({ coin }) => {
           <span className="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
             daisyUI
           </span>
-        </motion.a>
+        </Motion.a>
       </div>
 
       {/* Desktop Menu */}
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal gap-1 px-1">
           <li>
-            <motion.a
+            <Motion.a
               whileHover={{ y: -2 }}
               transition={{ type: "spring", stiffness: 400 }}
               className="rounded-xl"
             >
               Item 1
-            </motion.a>
+            </Motion.a>
           </li>
 
           <li>
@@ -120,20 +120,20 @@ const Navbar = ({ coin }) => {
           </li>
 
           <li>
-            <motion.a
+            <Motion.a
               whileHover={{ y: -2 }}
               transition={{ type: "spring", stiffness: 400 }}
               className="rounded-xl"
             >
               Item 3
-            </motion.a>
+            </Motion.a>
           </li>
         </ul>
       </div>
 
       {/* Coin Section */}
       <div className="navbar-end">
-        <motion.div
+        <Motion.div
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.4 }}
@@ -145,7 +145,7 @@ const Navbar = ({ coin }) => {
           className="flex cursor-pointer items-center gap-2 rounded-full border border-base-300 bg-base-200/70 px-4 py-2 shadow-sm backdrop-blur-sm transition-colors hover:bg-base-200"
         >
           {/* Coin Icon */}
-          <motion.img
+          <Motion.img
             src={Dollar}
             alt="Dollar"
             className="h-7 w-7 object-contain"
@@ -162,7 +162,7 @@ const Navbar = ({ coin }) => {
           />
 
           {/* Coin Count */}
-          <motion.span
+          <Motion.span
             key={coin}
             initial={{ y: -8, opacity: 0, scale: 0.8 }}
             animate={{ y: 0, opacity: 1, scale: 1 }}
@@ -174,14 +174,14 @@ const Navbar = ({ coin }) => {
             className="text-lg font-extrabold text-primary"
           >
             {coin}
-          </motion.span>
+          </Motion.span>
 
           <span className="text-sm font-semibold text-base-content/80">
             Coin
           </span>
-        </motion.div>
+        </Motion.div>
       </div>
-    </motion.div>
+    </Motion.div>
   );
 };
 
